@@ -8,7 +8,6 @@ int play_game(int num, vector<vector<vector<int>>> &boards){
 		for(int k = 0; k < 5; k++){
 			for(int l = 0; l < 5; l++){
 				if(boards[j][k][l] == num){
-					//cout << j << ' ' << k << ' ' << l << endl;
 					boards[j][k][l] = -1;
 					boards[j][k][5] += 1;
 					boards[j][5][l] += 1;
@@ -79,5 +78,5 @@ int main(){
 			}
 		}
 	}
-	cout << answer * last_number << endl;
+	cout << "answer for part 1: " << answer * last_number << endl;
 }

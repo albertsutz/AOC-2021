@@ -20,7 +20,6 @@ vector<int> play_game(int num, vector<vector<vector<int>>> &boards){
 		for(int k = 0; k < 5; k++){
 			for(int l = 0; l < 5; l++){
 				if(boards[j][k][l] == num){
-					//cout << j << ' ' << k << ' ' << l << endl;
 					boards[j][k][l] = -1;
 					boards[j][k][5] += 1;
 					boards[j][5][l] += 1;
@@ -90,27 +89,13 @@ int main(){
 
 		for(int k = 0; k < last_winner.size(); k++){
 			for(int j = 0; j < boards.size(); j++){
-				//cout << "Yes" << endl;
 				if(boards[j][5][5] == last_winner[k]){
 					boards.erase(boards.begin() + j);
 					break;
 				}
 			}
 		}
-
-		cout << "NOW" << sequence[i] << endl;
-		for(int j = 0; j < boards.size(); j++){
-			cout << boards[j][5][5] << ' ';
-		}
-		cout << endl;
 	}
-	cout << last_winner[0] << ' ' << last_number << endl;
-
-	// for(int i = 0; i < sequence.size(); i++){
-	// 	cout << play_game(sequence[i], boards) << endl;
-	// }
-
-	// cout << last_winner;
 	int answer = 0;
 	for(int i = 0; i < 5; i++){
 		for(int j = 0; j < 5; j++){
@@ -119,5 +104,5 @@ int main(){
 			}
 		}
 	}
-	cout << answer * last_number << endl;
+	cout << "answer for part2: " << answer * last_number << endl;
 }
